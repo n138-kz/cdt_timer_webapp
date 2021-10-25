@@ -59,13 +59,6 @@
       }
     </style>
     <script type="text/javascript">
-      function mpause(waitMsec) {
-        // https://www.sejuku.net/blog/24629
-        var startMsec = new Date();
-        // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
-        while (new Date() - startMsec < waitMsec);
-      }
-
       $(document).on('keydown', 'input[type="number"]', function(){
         $('input[type="number"]').change();
       });
@@ -117,9 +110,14 @@
         let startTime = new Date();
         let limitTime = new Date( (startTime.getTime() + remain) );
         let dateNow = new Date();
+        let timoutId = 0;
 
-        while (limitTime >= dateNow ) {
+        timoutId = setInterval(function(){
           dateNow = new Date();
+
+          if (limitTime < dateNow) {
+            clearInterval(timoutId);
+          }
 
           remain = Math.floor( (limitTime - dateNow) / 1000 );
 
@@ -156,8 +154,8 @@
             document.getElementById('display_parent').innerHTML = textContent;
           }
 
-          mpause(100);
-        }
+        }, 100);
+
         console.log('done...');
       });
     </script>

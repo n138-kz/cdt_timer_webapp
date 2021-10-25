@@ -61,6 +61,11 @@
       {
         opacity: 0;
       }
+      @media screen and (orientation: landscape) and (max-device-width: 860px) {
+        #userInput_parent {
+          display: none;
+        }
+      }
     </style>
     <script type="text/javascript">
       $(document).on('keydown', 'input[type="number"]', function(){

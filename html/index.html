@@ -182,6 +182,11 @@
           if (typeof registration.update == 'function') {
             registration.update();
           }
+
+          registration.onupdatefound = function() {
+            console.log('[PWA] Found the updates');
+            registration.update();
+          }
         })
         .catch(function (error) {
           console.log("Error Log: " + error);

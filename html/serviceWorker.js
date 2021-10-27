@@ -1,4 +1,4 @@
-var CACHE_NAME  = "cache-v1";
+var CACHE_NAME  = "cache-v1_0_0";
 var urlsToCache = [
   "/cdt_timer_webapp/index.html",
   "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css",

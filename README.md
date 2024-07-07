@@ -1,2 +1,3 @@
-# cdt_timer_webapp
-sample is [here](https://labs.n138.jp/cdt_timer_webapp/)
+# [cdt_timer_webapp](https://github.com/n138-kz/cdt_timer_webapp)
+
+sample is [here](html/)
